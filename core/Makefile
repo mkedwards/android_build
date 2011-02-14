@@ -1411,6 +1411,7 @@ $(INTERNAL_FINDBUGS_HTML_TARGET): $(INTERNAL_FINDBUGS_XML_TARGET)
 # These are some additional build tasks that need to be run.
 include $(sort $(wildcard $(BUILD_SYSTEM)/tasks/*.mk))
 -include $(sort $(wildcard vendor/*/build/tasks/*.mk))
+include $(sort $(wildcard device/*/common/tasks/*.mk))
 
 # -----------------------------------------------------------------
 # Create SDK repository packages. Must be done after tasks/* since
@@ -1418,4 +1419,6 @@ include $(sort $(wildcard $(BUILD_SYSTEM)/tasks/*.mk))
 ifneq ($(sdk_repo_goal),)
 include $(TOPDIR)development/build/tools/sdk_repo.mk
 endif
+
+
 
