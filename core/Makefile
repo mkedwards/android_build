@@ -800,7 +800,7 @@ stnod: systemtarball-nodeps
 #######
 ## boot tarball
 define build-boottarball-target
-    $(hide) echo "Target boot fs tarball: $(INSTALLED_BOOTTARBALL_TARGET)
+    $(hide) echo "Target boot fs tarball: $(INSTALLED_BOOTTARBALL_TARGET)"
     $(hide) mkdir -p $(PRODUCT_OUT)/boot
     $(hide) cp -f $(INTERNAL_BOOTIMAGE_FILES) $(PRODUCT_OUT)/boot/.
     $(hide) echo $(BOARD_KERNEL_CMDLINE) > $(PRODUCT_OUT)/boot/cmdline
@@ -815,7 +815,7 @@ endif
 
 boot_tar := $(PRODUCT_OUT)/boot.tar
 INSTALLED_BOOTTARBALL_TARGET := $(boot_tar).$(BOOT_TARBALL_FORMAT)
-$(INSTALLED_BOOTTARBALL_TARGET): PRIVATE_BOOT_TAR := $(boot_tar)
+PRIVATE_BOOT_TAR := $(boot_tar)
 $(INSTALLED_BOOTTARBALL_TARGET): $(FS_GET_STATS) $(INTERNAL_BOOTIMAGE_FILES)
 	$(build-boottarball-target)
 
