@@ -103,8 +103,8 @@ TARGET_ERROR_FLAGS := -Werror=return-type -Werror=non-virtual-dtor -Werror=addre
 # TODO: do symbol compression
 TARGET_COMPRESS_MODULE_SYMBOLS := false
 
-# Default is to prelink modules.
-TARGET_PRELINK_MODULE := true
+# Default is to prelink modules. (for linaro gcc 4.5 we dont do that due to bug; see lp:787072)
+TARGET_PRELINK_MODULE := false
 
 # ###############################################################
 # Include sub-configuration files
