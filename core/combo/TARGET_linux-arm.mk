@@ -58,8 +58,8 @@ TARGET_STRIP_COMMAND = $(TARGET_STRIP) --strip --shady --quiet $< --outfile $@
 TARGET_NO_UNDEFINED_LDFLAGS := -Wl,--no-undefined
 
 TARGET_arm_CFLAGS :=    -O2 \
-                        -fomit-frame-pointer \
-                        -fstrict-aliasing    \
+                        -fno-omit-frame-pointer \
+                        -fno-strict-aliasing    \
                         -funswitch-loops     \
                         -finline-limit=300
 
@@ -70,7 +70,7 @@ TARGET_arm_CFLAGS :=    -O2 \
 ifeq ($(ARCH_ARM_HAVE_THUMB_SUPPORT),true)
 TARGET_thumb_CFLAGS :=  -mthumb \
                         -Os \
-                        -fomit-frame-pointer \
+                        -fno-omit-frame-pointer \
                         -fno-strict-aliasing \
                         -finline-limit=64
 else
@@ -216,7 +216,7 @@ TARGET_CRTEND_O := $(TARGET_OUT_STATIC_LIBRARIES)/crtend_android.o
 TARGET_CRTBEGIN_SO_O := $(TARGET_OUT_STATIC_LIBRARIES)/crtbegin_so.o
 TARGET_CRTEND_SO_O := $(TARGET_OUT_STATIC_LIBRARIES)/crtend_so.o
 
-TARGET_STRIP_MODULE:=true
+TARGET_STRIP_MODULE:=false
 
 TARGET_DEFAULT_SYSTEM_SHARED_LIBRARIES := libc libstdc++ libm
 
