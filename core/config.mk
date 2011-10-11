@@ -103,8 +103,8 @@ TARGET_ERROR_FLAGS := -Werror=return-type -Werror=non-virtual-dtor -Werror=addre
 # TODO: do symbol compression
 TARGET_COMPRESS_MODULE_SYMBOLS := false
 
-# Default is to prelink modules.
-TARGET_PRELINK_MODULE := true
+# Leave PRELINK disabled as no obvious performance improvement observed when enabled
+TARGET_PRELINK_MODULE := false
 
 # ###############################################################
 # Include sub-configuration files

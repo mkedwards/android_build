@@ -57,7 +57,7 @@ TARGET_STRIP_COMMAND = $(TARGET_STRIP) --strip --shady --quiet $< --outfile $@
 
 TARGET_NO_UNDEFINED_LDFLAGS := -Wl,--no-undefined
 
-TARGET_arm_CFLAGS :=    -O2 \
+TARGET_arm_CFLAGS :=    -O3 \
                         -fno-omit-frame-pointer \
                         -fno-strict-aliasing    \
                         -funswitch-loops     \
@@ -279,5 +279,6 @@ $(TARGET_CXX) -nostdlib -Bstatic -Wl,-T,$(BUILD_SYSTEM)/armelf.x \
 	$(call normalize-target-libraries,$(PRIVATE_ALL_STATIC_LIBRARIES)) \
 	$(TARGET_FDO_LIB) \
 	$(TARGET_LIBGCC) \
+	$(call normalize-target-libraries,$(PRIVATE_ALL_STATIC_LIBRARIES)) \
 	$(TARGET_CRTEND_O)
 endef
