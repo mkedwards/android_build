@@ -350,7 +350,6 @@ GRANDFATHERED_USER_MODULES += \
 	libvisualizer \
 	libvorbisidec \
 	libvpx \
-	libwebcore \
 	libwpa_client \
 	libwrapsim \
 	libxml2 \

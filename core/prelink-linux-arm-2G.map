@@ -110,7 +110,6 @@ libaudioflinger.so      0x68D00000 # [~1M]
 # assorted system libraries
 libsqlite.so            0x68B00000 # [~2M]
 libexpat.so             0x68A00000 # [~1M]
-libwebcore.so           0x68300000 # [~7M]
 libbinder.so            0x68200000 # [~1M]
 libutils.so             0x68100000 # [~1M]
 libcameraservice.so     0x68000000 # [~1M]
